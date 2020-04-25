@@ -1,7 +1,9 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-//const {prefix, token} = require('./config.json');
-const prefix = '!';
+const {
+  prefix,
+  token
+} = require('./config.json');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const commandFiles = fs
@@ -26,20 +28,32 @@ client.on('message', (message) => {
   const commandName = args.shift().toLocaleLowerCase();
   const command = client.commands.get(commandName);
 
-  if (command.args && !args.length) {
+
+
+  if (command === undefined) {
+    return message.channel.send(
+      `You didn't provide any valid commands, ${message.author}!`
+    );
+  } else if (command.args && !args.length) {
     return message.channel.send(
       `You didn't provide any arguments, ${message.author}!`
     );
   }
 
+
   if (!client.commands.has(commandName)) return;
 
   try {
+
     command.execute(message, args);
+    // console.log(client);
+
+
   } catch (error) {
     console.error(error);
     message.reply('There was an error trying to execute that command');
   }
+
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(token);

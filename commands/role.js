@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'args-info',
+  name: 'role',
   description: 'Information about the arguments provided.',
   args: true,
   usage: '',
