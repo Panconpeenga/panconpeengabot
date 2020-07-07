@@ -3,6 +3,10 @@
     "description": "Panconpeenga's Bot",
     "version": "1.0.0",
     "main": "bot.js",
+    "engines": {
+        "node": "12.16.1",
+        "npm": "6.14.5"
+    },
     "scripts": {
         "start": "node bot.js"
     },
