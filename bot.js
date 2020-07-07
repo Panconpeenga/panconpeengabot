@@ -1,8 +1,9 @@
-require('dotenv').config();
+//require('dotenv').config();
+
 const fs = require('fs');
 const Discord = require('discord.js');
-//const {prefix,token} = require('./config.json');
-const prefix = process.env.PREFIX;
+const { prefix, token } = require('./config.json');
+//const prefix = process.env.PREFIX;
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const commandFiles = fs
@@ -27,8 +28,6 @@ client.on('message', (message) => {
   const commandName = args.shift().toLocaleLowerCase();
   const command = client.commands.get(commandName);
 
-
-
   if (command === undefined) {
     return message.channel.send(
       `You didn't provide any valid commands, ${message.author}!`
@@ -39,20 +38,15 @@ client.on('message', (message) => {
     );
   }
 
-
   if (!client.commands.has(commandName)) return;
 
   try {
-
     command.execute(message, args);
     // console.log(client);
-
-
   } catch (error) {
     console.error(error);
     message.reply('There was an error trying to execute that command');
   }
-
 });
 
-client.login();
+client.login(token);
