@@ -10,9 +10,10 @@
     "engines": {
         "node": "12.16.1",
         "npm": "*"
-      },
+    },
     "dependencies": {
         "discord.js": "^12.2.0",
+        "dotenv": "^8.2.0",
         "request": "2.81.0"
     }
 }
