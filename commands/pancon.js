@@ -6,7 +6,7 @@ module.exports = {
 
     if (choice % 2 === 1) {
       if (message.author.id === '106943665364021248') {
-        message.channel.send('hello big leaf');
+        message.channel.send('Back from the dead are we?');
       } else if (message.author.id === '103716174189039616') {
         message.channel.send('Hello Ed-boy');
       } else if (message.author.id === '104324129632563200') {
