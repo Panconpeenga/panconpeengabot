@@ -16,7 +16,7 @@ module.exports = {
       } else if (message.author.id === '103716260876926976') {
         message.channel.send('Understood.');
       } else if (message.author.is === '114188326285606913') {
-        message.channel.send("What's the opposite of a snake? ... COBRA!");
+        message.channel.send("What lives under a rock? ... COBRA!");
       } else {
         message.channel.send('Peenga');
         console.log(message.author);
