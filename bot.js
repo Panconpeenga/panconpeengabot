@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 //const {prefix,token} = require('./config.json');
 const prefix = process.env.PREFIX;
 const client = new Discord.Client();
+const fetch = require('node-fetch');
 client.commands = new Discord.Collection();
 const commandFiles = fs
   .readdirSync('./commands')

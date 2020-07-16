@@ -17,8 +17,11 @@ module.exports = {
         message.channel.send('Understood.');
       } else if (message.author.is === '114188326285606913') {
         message.channel.send("What lives under a rock? ... COBRA!");
-      } else {
-        message.channel.send('Peenga');
+      } else if (message.author.is === '397180211478790154'){
+        message.channel.send('Fuck you Swan')
+      }
+      else {
+        message.channel.send('hi stranger');
         console.log(message.author);
       }
     } else {

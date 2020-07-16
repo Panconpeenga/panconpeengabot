@@ -1,6 +1,6 @@
 module.exports = {
     name: 'commands',
-    description: 'List if commands',
+    description: 'List of commands',
     args: false,
     execute(message) {
       message.channel.send(
